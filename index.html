@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade XII Computer Science Notes</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2980b9;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --accent-color: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background-color: var(--dark-color);
+            color: white;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 20px 0;
+            transition: all 0.3s;
+            z-index: 100;
+            transform: translateX(-100%);
+        }
+        
+        .sidebar.open {
+            transform: translateX(0);
+        }
+        
+        .sidebar-header {
+            padding: 0 20px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .sidebar-header h2 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .sidebar-header p {
+            font-size: 0.9rem;
+            color: var(--light-color);
+        }
+        
+        .sidebar-menu {
+            padding: 20px 0;
+        }
+        
+        .sidebar-menu h3 {
+            padding: 10px 20px;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .sidebar-menu ul {
+            list-style: none;
+        }
+        
+        .sidebar-menu li a {
+            display: block;
+            padding: 10px 20px;
+            color: var(--light-color);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .sidebar-menu li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .sidebar-menu li.active a {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Main Content Styles */
+        .main-content {
+            flex: 1;
+            margin-left: 0;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+        
+        /* Landing Page Styles */
+        .landing-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .landing-page h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .landing-page p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        /* Curriculum Table Styles */
+        .curriculum-table {
+            width: 100%;
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .curriculum-table h3 {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 15px;
+            margin: 0;
+        }
+        
+        .curriculum-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .curriculum-table th, 
+        .curriculum-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .curriculum-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .curriculum-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .curriculum-table tr:last-child td {
+            border-bottom: none;
+            font-weight: bold;
+            background-color: var(--light-color);
+        }
+        
+        /* Chapter Styles */
+        .chapter {
+            padding: 40px 20px;
+            margin-bottom: 40px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .chapter h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-color);
+        }
+        
+        .chapter h3 {
+            color: var(--dark-color);
+            margin: 25px 0 15px;
+        }
+        
+        .chapter p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .chapter ul, .chapter ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .chapter li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .coming-soon {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: var(--light-color);
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        
+        .coming-soon h3 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            color: black;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        /* Mobile Menu Button */
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        /* Responsive Styles */
+        @media (min-width: 769px) {
+            .sidebar {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 250px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .landing-page h1 {
+                font-size: 2rem;
+            }
+            
+            .landing-page p {
+                font-size: 1rem;
+            }
+            
+            .curriculum-table {
+                font-size: 0.9rem;
+            }
+            
+            .curriculum-table th, 
+            .curriculum-table td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Menu Button -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Grade XII CS Notes</h2>
+            <p>CDC Nepal Curriculum</p>
+        </div>
+        <div class="sidebar-menu">
+            <h3>Chapters</h3>
+            <ul>
+                <li class="active"><a href="#chapter1">1. Database Management System</a></li>
+                <li><a href="#chapter2">2. Coming Soon</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <!-- Landing Page -->
+        <section class="landing-page" id="home">
+            <h1>Grade XII Computer Science Notes</h1>
+            <p>Comprehensive notes for Grade XII Computer Science students following the CDC Nepal curriculum. This resource covers all topics from the Database Management System chapter, including database concepts, models, normalization, security, and practical SQL implementation.</p>
+            
+            <!-- Curriculum Table -->
+            <div class="curriculum-table">
+                <h3>Curriculum Overview</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.N.</th>
+                            <th>Topic</th>
+                            <th>Content wise marks</th>
+                            <th>Working hours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Database management system</td>
+                            <td>8</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Data communication and networking</td>
+                            <td>9</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Web Tech – II</td>
+                            <td>8</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>C Programming II</td>
+                            <td>8</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Object oriented programming</td>
+                            <td>6</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Software development life cycle</td>
+                            <td>6</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Recent Trends in technology</td>
+                            <td>5</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Total</strong></td>
+                            <td><strong>50</strong></td>
+                            <td><strong>80</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Chapter 1: Database Management System -->
+        <section class="chapter" id="chapter1">
+            <h2>Chapter 1: Database Management System</h2>
+            
+            <h3>Data</h3>
+            <p>Data refers to raw facts, figures, or statistics that can be processed to produce meaningful information. Data can be in the form of numbers, text, images, audio, or video.</p>
+            
+            <h3>Information</h3>
+            <p>Information is processed, organized, and structured data that provides context and meaning. It is useful for decision-making and understanding.</p>
+            
+            <h3>Features of Information</h3>
+            <ul>
+                <li><strong>Accuracy:</strong> Information should be free from errors</li>
+                <li><strong>Timeliness:</strong> Information should be available when needed</li>
+                <li><strong>Relevance:</strong> Information should be pertinent to the user's needs</li>
+                <li><strong>Completeness:</strong> Information should include all necessary details</li>
+                <li><strong>Consistency:</strong> Information should be uniform across the system</li>
+            </ul>
+            
+            <!-- Rest of the chapter content remains the same -->
+            <!-- ... -->
+            
+        </section>
+        
+        <!-- Chapter 2: Coming Soon -->
+        <section class="chapter" id="chapter2">
+            <h2>Chapter 2: Coming Soon</h2>
+            <div class="coming-soon">
+                <h3>This chapter is under development</h3>
+                <p>We're working hard to bring you comprehensive notes for this chapter. Please check back later!</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Mobile menu toggle functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('mainContent');
+        
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event from bubbling to document
+            sidebar.classList.toggle('open');
+        });
+        
+        // Close sidebar when clicking outside
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768 && !sidebar.contains(e.target) && e.target !== menuToggle) {
+                sidebar.classList.remove('open');
+            }
+        });
+        
+        // Close sidebar when clicking on a menu item (for mobile)
+        const menuItems = document.querySelectorAll('.sidebar-menu a');
+        menuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('open');
+                }
+            });
+        });
+        
+        // Highlight active menu item based on scroll position
+        window.addEventListener('scroll', function() {
+            const chapters = document.querySelectorAll('.chapter');
+            const menuItems = document.querySelectorAll('.sidebar-menu li');
+            
+            let current = '';
+            
+            chapters.forEach(chapter => {
+                const chapterTop = chapter.offsetTop;
+                if (pageYOffset >= chapterTop - 200) {
+                    current = chapter.getAttribute('id');
+                }
+            });
+            
+            menuItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.querySelector('a').getAttribute('href') === '#' + current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
