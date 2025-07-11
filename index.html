@@ -26,7 +26,6 @@
             background-color: #f5f5f5;
         }
         
-        /* Sidebar Styles */
         .sidebar {
             width: 250px;
             background-color: var(--dark-color);
@@ -94,7 +93,6 @@
             color: white;
         }
         
-        /* Main Content Styles */
         .main-content {
             flex: 1;
             margin-left: 0;
@@ -102,7 +100,6 @@
             transition: all 0.3s;
         }
         
-        /* Landing Page Styles */
         .landing-page {
             min-height: 100vh;
             display: flex;
@@ -128,7 +125,6 @@
             line-height: 1.6;
         }
         
-        /* Curriculum Table Styles */
         .curriculum-table {
             width: 100%;
             max-width: 800px;
@@ -173,7 +169,6 @@
             background-color: var(--light-color);
         }
         
-        /* Chapter Styles */
         .chapter {
             padding: 40px 20px;
             margin-bottom: 40px;
@@ -208,21 +203,67 @@
             margin-bottom: 8px;
             line-height: 1.5;
         }
-        
-        .coming-soon {
-            text-align: center;
-            padding: 60px 20px;
+
+        .question-answer {
+            margin-bottom: 30px;
+            padding: 20px;
             background-color: var(--light-color);
             border-radius: 8px;
-            margin-top: 40px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .question-answer h3 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+
+        .question-answer table {
+            margin: 15px 0;
+        }
+
+        .question-answer ul {
+            margin-left: 20px;
+        }
+
+        .sql-operation {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .output-placeholder {
+            background-color: #f0f0f0;
+            border: 2px dashed #999;
+            padding: 15px;
+            margin-top: 10px;
+            text-align: center;
+            color: #666;
+            border-radius: 4px;
+        }
+
+        .output-placeholder p {
+            margin: 0;
+        }
+
+        .output-placeholder img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+        }
+
+        pre {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
         }
         
-        .coming-soon h3 {
-            color: var(--accent-color);
-            margin-bottom: 20px;
-        }
-        
-        /* Table Styles */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -248,7 +289,6 @@
             background-color: #f2f2f2;
         }
         
-        /* Mobile Menu Button */
         .menu-toggle {
             display: none;
             position: fixed;
@@ -263,8 +303,7 @@
             cursor: pointer;
             font-size: 1.2rem;
         }
-        
-        /* Responsive Styles */
+
         @media (min-width: 769px) {
             .sidebar {
                 transform: translateX(0);
@@ -300,10 +339,8 @@
     </style>
 </head>
 <body>
-    <!-- Mobile Menu Button -->
     <button class="menu-toggle" id="menuToggle">☰</button>
 
-    <!-- Sidebar Navigation -->
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <h2>Grade XII CS Notes</h2>
@@ -312,20 +349,18 @@
         <div class="sidebar-menu">
             <h3>Chapters</h3>
             <ul>
-                <li class="active"><a href="#chapter1">1. Database Management System</a></li>
-                <li><a href="#chapter2">2. Coming Soon</a></li>
+                <li><a href="#chapter1">1. Database Management System</a></li>
+                <li><a href="#past-questions-dbms">PYQ's of DBMS</a></li>
+                <li><a href="#chapter2">2. C Programming II</a></li>
             </ul>
         </div>
     </div>
 
-    <!-- Main Content -->
     <div class="main-content" id="mainContent">
-        <!-- Landing Page -->
         <section class="landing-page" id="home">
             <h1>Grade XII Computer Science Notes</h1>
             <p>Comprehensive notes for Grade XII Computer Science students following the CDC Nepal curriculum. This resource covers all topics from the Database Management System chapter, including database concepts, models, normalization, security, and practical SQL implementation.</p>
             
-            <!-- Curriculum Table -->
             <div class="curriculum-table">
                 <h3>Curriculum Overview</h3>
                 <table>
@@ -390,7 +425,6 @@
             </div>
         </section>
 
-        <!-- Chapter 1: Database Management System -->
         <section class="chapter" id="chapter1">
             <h2>Chapter 1: Database Management System</h2>
             
@@ -725,38 +759,456 @@
                     <td>Date and time value in 'YYYY-MM-DD HH:MM:SS' format</td>
                 </tr>
             </table>
+        </section>
+
+        <section class="chapter" id="past-questions-dbms">
+            <h2>Past Year Questions of DBMS (2020-2024) and Model Questions</h2>
+    
+            <div class="question-answer">
+                <h3>1. What is Database and DBMS? List out the advantages and disadvantages of DBMS.</h3>
+                <p><strong>Database:</strong> An organized collection of related data that is stored and accessed electronically.</p>
+                <p><strong>DBMS (Database Management System):</strong> Software that interacts with users, applications, and the database to capture and analyze data.</p>
+                <p><strong>Advantages of DBMS:</strong></p>
+                <ul>
+                    <li>Reduced data redundancy</li>
+                    <li>Improved data consistency</li>
+                    <li>Better data security</li>
+                    <li>Easier data sharing</li>
+                    <li>Improved data integrity</li>
+                </ul>
+                <p><strong>Disadvantages of DBMS:</strong></p>
+                <ul>
+                    <li>Complexity in design and implementation</li>
+                    <li>High initial cost</li>
+                    <li>Requires skilled personnel</li>
+                    <li>Performance overhead</li>
+                </ul>
+            </div>
             
+            <div class="question-answer">
+                <h3>2. Differentiate between file processing system and DBMS. Give at least four points.</h3>
+                <table>
+                    <tr>
+                        <th>File Processing System</th>
+                        <th>DBMS</th>
+                    </tr>
+                    <tr>
+                        <td>Data redundancy is high</td>
+                        <td>Data redundancy is controlled</td>
+                    </tr>
+                    <tr>
+                        <td>Data inconsistency is common</td>
+                        <td>Maintains data consistency</td>
+                    </tr>
+                    <tr>
+                        <td>Difficult to access data</td>
+                        <td>Easy data access through queries</td>
+                    </tr>
+                    <tr>
+                        <td>No data security features</td>
+                        <td>Provides data security</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="question-answer">
+                <h3>3. Explain the different models of DBMS with advantages and disadvantages.</h3>
+                <p><strong>1. Hierarchical Model:</strong></p>
+                <p>Tree-like structure with parent-child relationships. Each parent can have many children, but each child has only one parent.</p>
+                <p><strong>Advantages:</strong> Simple structure, fast access for hierarchical data</p>
+                <p><strong>Disadvantages:</strong> Limited to one-to-many relationships, rigid structure</p>
+                
+                <p><strong>2. Network Model:</strong></p>
+                <p>Extension of hierarchical model that allows many-to-many relationships.</p>
+                <p><strong>Advantages:</strong> More flexible than hierarchical, handles complex relationships</p>
+                <p><strong>Disadvantages:</strong> Complex to design and implement</p>
+                
+                <p><strong>3. Relational Model:</strong></p>
+                <p>Data organized in tables with rows and columns. Relationships established through foreign keys.</p>
+                <p><strong>Advantages:</strong> Simple structure, flexible queries, data independence</p>
+                <p><strong>Disadvantages:</strong> Performance issues with complex queries</p>
+                
+                <p><strong>4. Entity-Relational Model:</strong></p>
+                <p>Conceptual model describing data as entities, attributes, and relationships.</p>
+                <p><strong>Advantages:</strong> Good for database design, easy to understand</p>
+                <p><strong>Disadvantages:</strong> Not directly implementable, needs conversion to relational model</p>
+            </div>
+            
+            <div class="question-answer">
+                <h3>4. What is a relational database? How is it different from other database models?</h3>
+                <p><strong>Relational Database:</strong> A database that organizes data into tables (relations) with rows and columns, where relationships between tables are established through foreign keys.</p>
+                <p><strong>Differences from other models:</strong></p>
+                <ul>
+                    <li>Unlike hierarchical/network models, it doesn't use physical pointers but logical relationships</li>
+                    <li>More flexible than hierarchical model which only allows one-to-many relationships</li>
+                    <li>Simpler structure than network model which can become complex with many relationships</li>
+                    <li>Uses SQL for querying unlike other models which use specialized languages</li>
+                </ul>
+            </div>
+            
+            <div class="question-answer">
+                <h3>5. What is data redundancy? How does DBMS help in reducing it?</h3>
+                <p><strong>Data Redundancy:</strong> Duplication of data in multiple locations in a database, which can lead to inconsistency and waste storage space.</p>
+                <p><strong>How DBMS reduces redundancy:</strong></p>
+                <ul>
+                    <li>Normalization process divides data into related tables</li>
+                    <li>Foreign keys establish relationships instead of duplicating data</li>
+                    <li>Centralized data storage eliminates multiple copies</li>
+                    <li>Data integrity constraints prevent inconsistent duplicates</li>
+                </ul>
+            </div>
+            
+            <div class="question-answer">
+                <h3>6. Write differentiate between centralized and distributed database systems.</h3>
+                <table>
+                    <tr>
+                        <th>Centralized Database</th>
+                        <th>Distributed Database</th>
+                    </tr>
+                    <tr>
+                        <td>Data stored at single location</td>
+                        <td>Data stored across multiple locations</td>
+                    </tr>
+                    <tr>
+                        <td>Lower hardware/software costs</td>
+                        <td>Higher hardware/software costs</td>
+                    </tr>
+                    <tr>
+                        <td>Single point of failure</td>
+                        <td>No single point of failure</td>
+                    </tr>
+                    <tr>
+                        <td>Simpler to manage</td>
+                        <td>More complex to manage</td>
+                    </tr>
+                    <tr>
+                        <td>Better data consistency</td>
+                        <td>Potential consistency issues</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="question-answer">
+                <h3>7. Who is Database Administrator (DBA)? What are the major responsibilities of DBA?</h3>
+                <p><strong>Database Administrator (DBA):</strong> A professional responsible for the installation, configuration, upgrade, administration, monitoring and maintenance of databases.</p>
+                <p><strong>Major Responsibilities:</strong></p>
+                <ul>
+                    <li>Installing and upgrading database software</li>
+                    <li>Designing database structure</li>
+                    <li>Implementing security measures</li>
+                    <li>Managing user accounts and permissions</li>
+                    <li>Monitoring database performance</li>
+                    <li>Planning backup and recovery strategies</li>
+                    <li>Troubleshooting database issues</li>
+                </ul>
+            </div>
+            
+            <div class="question-answer">
+                <h3>8. Define normalization. Explain 1NF, 2NF and 3NF with suitable examples.</h3>
+                <p><strong>Normalization:</strong> The process of organizing data in a database to reduce redundancy and improve data integrity by dividing large tables into smaller, related tables.</p>
+                
+                <p><strong>1NF (First Normal Form):</strong></p>
+                <ul>
+                    <li>Each table cell contains a single value</li>
+                    <li>Each record is unique</li>
+                    <li>No repeating groups or arrays</li>
+                    <li><strong>Example:</strong> A student table with separate rows for each subject rather than a list of subjects in one cell</li>
+                </ul>
+                
+                <p><strong>2NF (Second Normal Form):</strong></p>
+                <ul>
+                    <li>Must be in 1NF</li>
+                    <li>All non-key attributes depend on the entire primary key (no partial dependency)</li>
+                    <li><strong>Example:</strong> If a composite primary key (student_id + course_id) determines grade, then student_name shouldn't be in this table as it only depends on student_id</li>
+                </ul>
+                
+                <p><strong>3NF (Third Normal Form):</strong></p>
+                <ul>
+                    <li>Must be in 2NF</li>
+                    <li>No transitive dependency (non-key attributes shouldn't depend on other non-key attributes)</li>
+                    <li><strong>Example:</strong> In a student table, if student_id determines department, and department determines HOD, then HOD should be moved to a department table</li>
+                </ul>
+            </div>
+            
+            <div class="question-answer">
+                <h3>9. Explain the terms: primary key, foreign key, and candidate key with examples.</h3>
+                <p><strong>Primary Key:</strong> A column or set of columns that uniquely identifies each row in a table. <strong>Example:</strong> student_id in a Students table.</p>
+                <p><strong>Foreign Key:</strong> A column that creates a relationship between two tables by referencing the primary key of another table. <strong>Example:</strong> department_id in Students table that references department_id in Departments table.</p>
+                <p><strong>Candidate Key:</strong> A column or set of columns that could serve as a primary key (uniquely identifies rows and doesn't contain nulls). <strong>Example:</strong> In a Students table, both student_id and email could be candidate keys if both are unique.</p>
+            </div>
+            
+            <div class="question-answer">
+                <h3>10. What is SQL? Explain its components and common functions.</h3>
+                <p><strong>SQL (Structured Query Language):</strong> A standard language for managing and manipulating relational databases.</p>
+                <p><strong>Components:</strong></p>
+                <ul>
+                    <li><strong>DDL (Data Definition Language):</strong> CREATE, ALTER, DROP (define database structure)</li>
+                    <li><strong>DML (Data Manipulation Language):</strong> SELECT, INSERT, UPDATE, DELETE (manipulate data)</li>
+                    <li><strong>DCL (Data Control Language):</strong> GRANT, REVOKE (control access)</li>
+                    <li><strong>TCL (Transaction Control Language):</strong> COMMIT, ROLLBACK (manage transactions)</li>
+                </ul>
+                <p><strong>Common Functions:</strong></p>
+                <ul>
+                    <li><strong>Aggregate:</strong> COUNT(), SUM(), AVG(), MAX(), MIN()</li>
+                    <li><strong>String:</strong> CONCAT(), SUBSTRING(), UPPER(), LOWER()</li>
+                    <li><strong>Date:</strong> NOW(), DATE(), YEAR(), MONTH()</li>
+                    <li><strong>Mathematical:</strong> ROUND(), ABS(), POWER()</li>
+                </ul>
+            </div>
+
+            <div class="question-answer">
+                <h3>11. Write SQL commands to perform the following operations:</h3>
+                
+                <div class="sql-operation">
+                    <p><strong>a. Create a table named students with the fields: Id, Name, Class, and Marks.</strong></p>
+                    <pre>CREATE TABLE students(
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL,
+    Class VARCHAR(20),
+    Marks DECIMAL(5,2)
+);</pre>
+                    <div class="output-placeholder">
+                        <img src="images/create-table1.png" alt="">
+                        <img src="images/create-table2.png" alt="">
+                    </div>
+                </div>
+
+                <div class="sql-operation">
+                    <p><strong>b. Insert records into the students table with appropriate values.</strong></p>
+                    <pre>INSERT INTO students (Id, Name, Class, Marks)
+VALUES 
+(1, 'Ramesh', '12A', 78.5),
+(2, 'Sita', '12B', 85.0),
+(3, 'Anita', '12A', 76.0),
+(4, 'Bikash', '12C', 92.5);</pre>
+                    <div class="output-placeholder">
+                        <img src="images/insert1.png" alt="">
+                    </div>
+                </div>
+
+                <div class="sql-operation">
+                    <p><strong>c. Display all records from the students table.</strong></p>
+                    <pre>SELECT * FROM students;</pre>
+                    <div class="output-placeholder">
+                        <img src="images/select.png" alt="">
+                    </div>
+                </div>
+
+                <div class="sql-operation">
+                    <p><strong>d. Update the marks of a student whose name is 'Anita' to 85.</strong></p>
+                    <pre>UPDATE students
+SET Marks = 85
+WHERE Name = 'Anita';</pre>
+                    <div class="output-placeholder">
+                        <p>Output will be displayed here as image</p>
+                    </div>
+                </div>
+
+                <div class="sql-operation">
+                    <p><strong>e. Delete the record of the student with id = 3.</strong></p>
+                    <pre>DELETE FROM students WHERE Id = 3;</pre>
+                    <div class="output-placeholder">
+                        <p>Output will be displayed here as image</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-answer">
+                <h3>12. Define the following terms.</h3>
+                <p><strong>a. Data Dictionary:</strong> A centralized repository of metadata (data about data) that describes the structure, relationships, and other characteristics of the data stored in a database.</p>
+                
+                <p><strong>b. Primary Key:</strong> A column or set of columns that uniquely identifies each row in a table. It cannot contain NULL values and must be unique.</p>
+                
+                <p><strong>c. Relationship:</strong> An association between two or more tables in a database, established through common fields (typically primary and foreign keys).</p>
+                
+                <p><strong>d. Data Manipulation Language (DML):</strong> A subset of SQL used to retrieve, insert, update, and delete data in a database (e.g., SELECT, INSERT, UPDATE, DELETE).</p>
+                
+                <p><strong>e. Structured Query Language (SQL):</strong> A standard programming language used to manage and manipulate relational databases.</p>
+                
+                <p><strong>f. Data Integrity:</strong> The accuracy, consistency, and reliability of data stored in a database, maintained through various constraints and rules.</p>
+                
+                <p><strong>g. Data Definition Language (DDL):</strong> A subset of SQL used to define and modify database structures (e.g., CREATE, ALTER, DROP).</p>
+                
+                <p><strong>h. Data Security:</strong> Protective measures implemented to prevent unauthorized access, modification, or destruction of database information.</p>
+                
+                <p><strong>i. Database System:</strong> A complete system for database management including the database, DBMS, and application programs that interact with the database.</p>
+            </div>
         </section>
         
-        <!-- Chapter 2: Coming Soon -->
         <section class="chapter" id="chapter2">
-            <h2>Chapter 2: Coming Soon</h2>
-            <div class="coming-soon">
-                <h3>This chapter is under development</h3>
-                <p>We're working hard to bring you comprehensive notes for this chapter. Please check back later!</p>
+            <h2>Chapter 2: C Programming II</h2>
+
+            <div class="question-answer">
+                <h3>1. Working with a function</h3>
+                <p><strong>a. Define function:</strong> A function is a self-contained block of code that performs a specific task. It can take inputs, process them, and return a result.</p>
+                
+                <p><strong>b. Syntax of functions:</strong></p>
+                <pre>return_type function_name(parameters) {
+    // function body
+    return value;
+}</pre>
+                
+                <p><strong>c. Types of functions:</strong></p>
+                <ul>
+                    <li><strong>Library functions:</strong> Predefined functions in C standard library (e.g., printf(), scanf())</li>
+                    <li><strong>User-defined functions:</strong> Functions created by programmers to perform specific tasks</li>
+                </ul>
+                
+                <p><strong>d. Components of function:</strong></p>
+                <ol>
+                    <li><strong>Function prototype:</strong> Declaration of function before its use (return type, name, parameters)</li>
+                    <li><strong>Function call:</strong> Invoking the function to execute its code</li>
+                    <li><strong>Function definition:</strong> Actual implementation of the function</li>
+                    <li><strong>Return type:</strong> Data type of value the function returns (void if no return)</li>
+                </ol>
+            </div>
+
+            <div class="question-answer">
+                <h3>2. Categories of function with example</h3>
+                <p><strong>i. Function with return type but no arguments:</strong></p>
+                <pre>int getNumber() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    return num;
+}</pre>
+                
+                <p><strong>ii. Function with return type with arguments:</strong></p>
+                <pre>int add(int a, int b) {
+    return a + b;
+}</pre>
+                
+                <p><strong>iii. Function with no return type with no arguments:</strong></p>
+                <pre>void greet() {
+    printf("Hello, World!");
+}</pre>
+                
+                <p><strong>iv. Function with no return type with arguments:</strong></p>
+                <pre>void printSum(int a, int b) {
+    printf("Sum: %d", a + b);
+}</pre>
+            </div>
+
+            <div class="question-answer">
+                <h3>3. Storage classes</h3>
+                <p><strong>i. Automatic (auto):</strong> Default storage class for local variables (created when function is called, destroyed when function exits)</p>
+                <pre>void func() {
+    auto int x;  // same as: int x;
+}</pre>
+                
+                <p><strong>ii. External (extern):</strong> Used to declare global variables visible to all files in a program</p>
+                <pre>// file1.c
+int count;  // global variable
+
+// file2.c
+extern int count;  // access global count from file1</pre>
+                
+                <p><strong>iii. Register:</strong> Suggests compiler to store variable in CPU register for faster access</p>
+                <pre>register int counter;</pre>
+                
+                <p><strong>iv. Static:</strong> Preserves variable value between function calls, or limits scope to file</p>
+                <pre>void counter() {
+    static int count = 0;  // retains value between calls
+    count++;
+    printf("%d", count);
+}</pre>
+            </div>
+
+            <div class="question-answer">
+                <h3>4. Recursive function with syntax and examples</h3>
+                <p><strong>Recursive function:</strong> A function that calls itself directly or indirectly to solve a problem by breaking it into smaller sub-problems.</p>
+                
+                <p><strong>Syntax:</strong></p>
+                <pre>return_type function(parameters) {
+    if (base_condition)  // stopping condition
+        return value;
+    else
+        return function(modified_parameters);  // recursive call
+}</pre>
+                
+                <p><strong>Example (Factorial):</strong></p>
+                <pre>int factorial(int n) {
+    if (n == 0 || n == 1)  // base case
+        return 1;
+    else
+        return n * factorial(n - 1);  // recursive call
+}</pre>
+                
+                <p><strong>Example (Fibonacci):</strong></p>
+                <pre>int fibonacci(int n) {
+    if (n <= 1)  // base case
+        return n;
+    else
+        return fibonacci(n-1) + fibonacci(n-2);  // recursive call
+}</pre>
+            </div>
+
+            <div class="question-answer">
+                <h3>5. Demonstration of passing array to a function (code examples)</h3>
+                <p><strong>Passing array to function:</strong> Arrays can be passed to functions by specifying the array name without brackets.</p>
+                
+                <p><strong>Example 1: Passing 1D array</strong></p>
+                <pre>void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+}
+
+int main() {
+    int numbers[5] = {1, 2, 3, 4, 5};
+    printArray(numbers, 5);  // pass array name and size
+    return 0;
+}</pre>
+                
+                <p><strong>Example 2: Passing 2D array</strong></p>
+                <pre>void printMatrix(int mat[][3], int rows) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d ", mat[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int matrix[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    printMatrix(matrix, 2);  // pass 2D array
+    return 0;
+}</pre>
+                
+                <p><strong>Example 3: Modifying array in function</strong></p>
+                <pre>void doubleElements(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        arr[i] *= 2;  // original array will be modified
+    }
+}
+
+int main() {
+    int nums[3] = {5, 10, 15};
+    doubleElements(nums, 3);
+    // nums now contains {10, 20, 30}
+    return 0;
+}</pre>
             </div>
         </section>
     </div>
 
     <script>
-        // Mobile menu toggle functionality
         const menuToggle = document.getElementById('menuToggle');
         const sidebar = document.getElementById('sidebar');
         const mainContent = document.getElementById('mainContent');
         
         menuToggle.addEventListener('click', function(e) {
-            e.stopPropagation(); // Prevent event from bubbling to document
+            e.stopPropagation();
             sidebar.classList.toggle('open');
         });
         
-        // Close sidebar when clicking outside
         document.addEventListener('click', function(e) {
             if (window.innerWidth <= 768 && !sidebar.contains(e.target) && e.target !== menuToggle) {
                 sidebar.classList.remove('open');
             }
         });
         
-        // Close sidebar when clicking on a menu item (for mobile)
         const menuItems = document.querySelectorAll('.sidebar-menu a');
         menuItems.forEach(item => {
             item.addEventListener('click', function() {
@@ -766,7 +1218,6 @@
             });
         });
         
-        // Highlight active menu item based on scroll position
         window.addEventListener('scroll', function() {
             const chapters = document.querySelectorAll('.chapter');
             const menuItems = document.querySelectorAll('.sidebar-menu li');
